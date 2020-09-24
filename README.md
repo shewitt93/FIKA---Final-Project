@@ -3,6 +3,12 @@ The homely gaming platform where you can get away from work!
 
 Our user will be a worker/recently redundant employee(this could also be used as a social space to network) who wishes to socialise with his work colleagues but no longer gets the opportunity due to Covid. Our space aims to bring people back together and motivate them towards interactions with one another via a chat and games platform
 
+## MVP
+To create a full stack app, with user authentication.
+Socketed Tic Tac Toe game limited to players in game.
+60% test coverage
+Admin portal for organisations
+
 
 
 
@@ -10,8 +16,10 @@ Our user will be a worker/recently redundant employee(this could also be used as
 
 ![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Screenshot%202020-09-24%20at%2019.55.45.png)
 
+## Schema
+![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Schema.png)
 
-
+## Schema
 
 ## User running instructions
 
@@ -34,12 +42,13 @@ To run the repo code:
 3. PostgreSQL
 4. Socket.io
 
+
+
+
 ## Process and Roadmap
-- Started by wireframing the pages in Figma
-- Wrote pseudo code to break down the logic of collecting user input, collecting information from the API, linking the two and assigning functionality to buttons.
-- Used Webpack to configure our server and development setup.
-- created database schema then SQL file
-- Set up authentication with JWT tokens which were used to authenticate frontend routes
+* 1
+* 2
+* 3
 
 ## Challenges
 * 1
