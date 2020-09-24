@@ -1,17 +1,17 @@
-### Welome to FIKA! The homely gaming platform where you can get away from work!
+# Welome to FIKA! The homely gaming platform where you can get away from work!
 
 
 
-# FIGMA
+## FIGMA
 
 
 
 
-# User running instructions
+## User running instructions
 
 
 
-# Dev running instruction
+## Dev running instruction
 
 
 ### to add
