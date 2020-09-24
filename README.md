@@ -4,10 +4,10 @@ The homely gaming platform where you can get away from work!
 Our user will be a worker/recently redundant employee(this could also be used as a social space to network) who wishes to socialise with his work colleagues but no longer gets the opportunity due to Covid. Our space aims to bring people back together and motivate them towards interactions with one another via a chat and games platform
 
 ## MVP
-To create a full stack app, with user authentication.
-Socketed Tic Tac Toe game limited to players in game.
-60% test coverage
-Admin portal for organisations
+* To create a full stack app, with user authentication.
+* Socketed Tic Tac Toe game limited to players in game.
+* 60% test coverage
+* Admin portal for organisations
 
 
 
