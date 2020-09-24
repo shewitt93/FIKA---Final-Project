@@ -19,7 +19,7 @@ Our user will be a worker/recently redundant employee(this could also be used as
 ## Schema
 ![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Schema.png)
 
-## Schema
+
 
 ## User running instructions
 
