@@ -2,7 +2,9 @@
 
 
 
-## FIGMA
+## Design specs
+
+![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/FIGMA%20colour%20scheme.png)
 
 
 
