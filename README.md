@@ -1,38 +1,36 @@
 # Welome to FIKA!
+
 The homely gaming platform where you can get away from work!
 
 Our user will be a worker/recently redundant employee(this could also be used as a social space to network) who wishes to socialise with his work colleagues but no longer gets the opportunity due to Covid. Our space aims to bring people back together and motivate them towards interactions with one another via a chat and games platform
 
 ## MVP
-* To create a full stack app, with user authentication.
-* Socketed Tic Tac Toe game limited to players in game.
-* 60% test coverage
-* Admin portal for organisations
 
-
-
+- To create a full stack app, with user authentication.
+- Socketed Tic Tac Toe game limited to players in game.
+- 60% test coverage
+- Admin portal for organisations
 
 ## Design specs
 
 ![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Screenshot%202020-09-24%20at%2019.55.45.png)
 
 ## Schema
+
 ![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Schema.png)
-
-
 
 ## User running instructions
 
-
-
 ## Dev running instruction
+
 To run the repo code:
+
 1. Fork and clone this repo
 2. cd into repo
 3. Install requirements
    - `pip install -r requirements.txt`
 4. cd into project and start server
-   - `python manage.py runserver` 
+   - `python manage.py runserver`
 5. npm run dev to start react app
 
 ### This app uses
@@ -42,30 +40,30 @@ To run the repo code:
 3. PostgreSQL
 4. Socket.io
 
-
-
-
 ## Process and Roadmap
-* 1
-* 2
-* 3
+
+- 1
+- 2
+- 3
 
 ## Challenges
-* 1
-* 2
-* 3
+
+- 1
+- 2
+- 3
 
 ## Future features
-* 1
-* 2
-* 3
 
+- 1
+- 2
+- 3
 
 ## License
+
 - [MIT License](https://opensource.org/licenses/mit-license.php)
 
-
 ### to add
+
 ➽ Why did you build this? -
 ➽ How do you use this? -
 ➽ What is this? -
