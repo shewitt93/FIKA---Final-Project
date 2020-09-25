@@ -9,6 +9,10 @@ Our user will be a worker/recently redundant employee(this could also be used as
 * 60% test coverage
 * Admin portal for organisations
 
+## Snippets
+
+https://github.com/georgeo23/reactchat
+
 
 
 
