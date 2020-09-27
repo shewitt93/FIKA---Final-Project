@@ -1,4 +1,4 @@
-const TOKEN_KEY = localStorage.getItem("user");
+const TOKEN_KEY = localStorage.getItem("token");
 
 export const isLogin = () => {
   if (TOKEN_KEY) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 // import "../styles/NavBar.css";
-import { logout } from "../utils";
+import { logout } from "../reducer/authReducer";
 
 export default function NavBar() {
   return (
