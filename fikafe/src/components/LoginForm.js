@@ -28,7 +28,9 @@ export default class Login extends Component {
       .then((r) => r.json())
       .then((data) => {
         localStorage.setItem("token", data.token);
+        window.location = "/home";
       })
+
       .catch((error) => console.log(error));
   };
 

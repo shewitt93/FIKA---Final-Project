@@ -7,19 +7,16 @@ export default function NavBar() {
   return (
     <div className="navContainer">
       {" "}
-      Hi
-      {/* <div className="logo">🍏aDay</div>
+      <div className="logo">FIKA</div>
       <nav>
-        <NavLink className="navlink" to="/session">
+        <NavLink className="navlink" to="/home">
           Dashboard
         </NavLink>
-        <NavLink className="navlink" to="/session/profile">
-          Profile
-        </NavLink>
+
         <NavLink onClick={() => logout()} className="navlink" to="/">
           Logout
         </NavLink>
-      </nav> */}
+      </nav>
     </div>
   );
 }

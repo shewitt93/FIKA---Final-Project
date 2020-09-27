@@ -16,7 +16,7 @@ export default class SignupForm extends Component {
     if (this.state.password === this.state.passwordTwo) {
       userData = {
         email: this.state.email,
-        name: this.state.username,
+        username: this.state.username,
         password: this.state.password,
       };
       const options = {
@@ -25,14 +25,7 @@ export default class SignupForm extends Component {
         body: JSON.stringify(userData),
       };
 
-      fetch("http://localhost:3000/users/register", options)
-        .then((r) => r.json())
-        .then((data) => {
-          alert(data);
-          if (data.includes("Welcome")) {
-            window.location = `/`;
-          }
-        });
+      fetch("http://localhost:8000/core/users/", options).then((r) => r.json());
 
       console.log("CONNECT TO DB");
     } else {
