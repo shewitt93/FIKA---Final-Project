@@ -1,26 +1,25 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
+// import "../styles/NavBar.css";
+import { logout } from "../utils";
 
-function Nav(props) {
-  const logged_out_nav = (
-    <ul>
-      <li onClick={() => props.display_form("login")}>login</li>
-      <li onClick={() => props.display_form("signup")}>signup</li>
-    </ul>
+export default function NavBar() {
+  return (
+    <div className="navContainer">
+      {" "}
+      Hi
+      {/* <div className="logo">🍏aDay</div>
+      <nav>
+        <NavLink className="navlink" to="/session">
+          Dashboard
+        </NavLink>
+        <NavLink className="navlink" to="/session/profile">
+          Profile
+        </NavLink>
+        <NavLink onClick={() => logout()} className="navlink" to="/">
+          Logout
+        </NavLink>
+      </nav> */}
+    </div>
   );
-
-  const logged_in_nav = (
-    <ul>
-      <li onClick={props.handle_logout}>logout</li>
-    </ul>
-  );
-  return <div>{props.logged_in ? logged_in_nav : logged_out_nav}</div>;
 }
-
-export default Nav;
-
-Nav.propTypes = {
-  logged_in: PropTypes.bool.isRequired,
-  display_form: PropTypes.func.isRequired,
-  handle_logout: PropTypes.func.isRequired,
-};

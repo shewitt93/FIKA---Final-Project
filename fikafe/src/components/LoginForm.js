@@ -1,48 +1,75 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-class LoginForm extends React.Component {
-  state = {
-    username: "",
-    password: "",
+export default class Login extends Component {
+  state = { username: "", password: "" };
+
+  handleInput = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
-  handle_change = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState((prevstate) => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
-    });
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ Password: "" });
+
+    let LogIn = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    const options = {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(LogIn),
+    };
+    console.log(options);
+
+    fetch("http://localhost:8000/token-auth/", options)
+      .then((r) => r.json())
+      .then((data) => {
+        localStorage.setItem("token", data.token);
+      })
+      .catch((error) => console.log(error));
   };
 
   render() {
     return (
-      <form onSubmit={(e) => this.props.handle_login(e, this.state)}>
-        <h4>Log In</h4>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={this.state.username}
-          onChange={this.handle_change}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handle_change}
-        />
-        <input type="submit" />
-      </form>
+      <>
+        <div className="loginPageContainer">
+          <div className="loginFormContainer">
+            <form onSubmit={this.handleFormSubmit}>
+              <input
+                required
+                className="formInput"
+                type="text"
+                name="username"
+                placeholder="username"
+                onChange={this.handleInput}
+              />
+              <br />
+              <input
+                required
+                className="formInput"
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleInput}
+              />
+              <br />
+              <input type="submit" value="Login" className="loginButton" />
+            </form>
+            <div className="callToAction">
+              <h2>Not Registered yet?</h2>
+              <br />
+              <Link to="/register">
+                Click <span className="clickHere">here</span> to create an
+                account
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 }
-
-export default LoginForm;
-
-LoginForm.propTypes = {
-  handle_login: PropTypes.func.isRequired,
-};
