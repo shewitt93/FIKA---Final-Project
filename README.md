@@ -6,6 +6,19 @@ Our user will be a worker/recently redundant employee(this could also be used as
 
 ## MVP
 
+=======
+* To create a full stack app, with user authentication.
+* Socketed Tic Tac Toe game limited to players in game.
+* 60% test coverage
+* Admin portal for organisations
+
+## Snippets
+
+https://github.com/georgeo23/reactchat
+
+
+
+
 - To create a full stack app, with user authentication.
 - Socketed Tic Tac Toe game limited to players in game.
 - 60% test coverage
