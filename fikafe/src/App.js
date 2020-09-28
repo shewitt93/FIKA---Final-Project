@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+
 import "./App.css";
 
 import Login from "./components/LoginForm";
@@ -7,6 +8,8 @@ import SignupForm from "./components/SignupForm";
 import Home from "./components/Home";
 import PrivateRoute from "./components/PrivateRoute";
 // import "./App.css";
+
+// if state = token then go to home
 
 class App extends React.Component {
   render() {
