@@ -2,15 +2,35 @@ import { isLogin } from "../reducer/authReducer";
 import React from "react";
 import Nav from "./Nav";
 import { Switch, Route } from "react-router-dom";
-import chat from "./chat";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import DashBoard from "./DashBoard";
+import Chat from "./Chat";
+import TikTac from "./TikTac.js";
 
 class App extends React.Component {
+  state = {
+    initialState: [],
+  };
+  componentDidMount() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `JWT ${localStorage.getItem("token")}`,
+      },
+    };
+    fetch("http://localhost:8000/core/current_user", options)
+      .then((response) => response.json())
+      .then((data) => this.setState({ initialState: data }));
+  }
   render() {
     return (
       <>
         <Nav />
         <Switch>
-          <Route exact path="/home" component={chat} />
+          <Route exact path="/home" component={DashBoard} />
+          <Route path="/home/chat" component={Chat} />
+          <Route path="/home/game" component={TikTac} />
 
           {/* <Route component={NotFound404} /> */}
         </Switch>
@@ -18,5 +38,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

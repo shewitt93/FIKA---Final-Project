@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link, Redirect } from "react-router-dom";
+
 import "../styles/LoginForm.css";
 
 export default class Login extends Component {
@@ -44,11 +45,7 @@ export default class Login extends Component {
         <div className="loginPageContainer">
           <h3>Login</h3>
           <div className="loginFormContainer">
-            <form
-              autoComplete="disabled"
-              autoFill="something-new"
-              onSubmit={this.handleFormSubmit}
-            >
+            <form autoComplete="disabled" onSubmit={this.handleFormSubmit}>
               <input
                 required
                 autoComplete="disabled"
@@ -72,11 +69,9 @@ export default class Login extends Component {
               <span className="submitForm">
                 <input type="submit" value="Login" className="loginButton" />
                 <div className="callToAction">
-                  <Link to="/register">
-                    <button className="loginButton">
-                      <a href="/register">Register</a>
-                    </button>
-                  </Link>
+                  <button className="loginButton">
+                    <a href="/register">Register</a>
+                  </button>
                 </div>
               </span>
             </form>
