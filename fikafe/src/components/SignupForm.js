@@ -28,7 +28,7 @@ export default class SignupForm extends Component {
 
       fetch("http://localhost:8000/core/users/", options).then((r) => r.json());
 
-      console.log("CONNECT TO DB");
+      alert("Welcome, please Login ");
     } else {
       alert("Passwords do not match");
     }
