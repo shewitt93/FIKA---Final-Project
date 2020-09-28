@@ -12,6 +12,9 @@ export default function NavBar() {
         <NavLink className="navlink" to="/home">
           Dashboard
         </NavLink>
+        <NavLink className="navlink" to="/home/chat">
+          chat
+        </NavLink>
 
         <NavLink onClick={() => logout()} className="navlink" to="/">
           Logout
