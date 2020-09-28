@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/tiktactoe.css";
+const URL = "ws://localhost:3040";
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -12,6 +14,14 @@ class Board extends React.Component {
     squares: Array(9).fill(null),
     xIsNext: true,
   };
+  ws = new WebSocket(URL);
+
+  componentDidMount = () => {
+    this.ws.onopen = () => {
+      console.log("someone has joined");
+    };
+  };
+
   handleClick = (i) => {
     const squares = this.state.squares.slice();
     if (calculateWinner(squares) || squares[i]) {

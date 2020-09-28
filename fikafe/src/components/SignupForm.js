@@ -26,9 +26,29 @@ export default class SignupForm extends Component {
         body: JSON.stringify(userData),
       };
 
-      fetch("http://localhost:8000/core/users/", options).then((r) => r.json());
+      fetch("http://localhost:8000/core/users/", options)
+        .then((r) => r.json())
+        .then((data) => {
+          console.log(data);
+          if (data.username[0] == "A user with that username already exists.") {
+            alert("A user with that username already exists!");
+          } else {
+            if (window.confirm("click ok to login!")) {
+              window.location.href = "/";
+            }
+          }
+        });
 
-      alert("Welcome, please Login ");
+      // if (this.state.password === this.state.passwordTwo) {
+      //   alert("Passwords do not match");
+      // }
+      // else if (data.username[0] == "A user with that username already exists.")
+      //  {
+      //   alert("Name Taken!");
+      // }
+      // else {
+      //   window.location = `/`;
+      // }
     } else {
       alert("Passwords do not match");
     }
