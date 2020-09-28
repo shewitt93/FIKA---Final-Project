@@ -45,6 +45,13 @@ To run the repo code:
 4. cd into project and start server
    - `python manage.py runserver`
 5. npm run dev in fikafe to start react app
+ -`but first npm install`
+6. create psql table called fika
+-`createruser --superuser postgres`
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+7. for websocket chat cd into fikafe/server
+- `run node index.js`
 
 ### This app uses
 
