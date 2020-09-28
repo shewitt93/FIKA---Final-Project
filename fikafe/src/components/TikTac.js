@@ -1,5 +1,9 @@
 import React from "react";
 import "../styles/tiktactoe.css";
+
+const URL = "ws://localhost:3040";
+
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -12,8 +16,33 @@ class Board extends React.Component {
     squares: Array(9).fill(null),
     xIsNext: true,
   };
+
+  ws = new WebSocket(URL);
+
+  componentDidMount(){
+    this.ws.onopen = () => {
+      // on connecting, log it to the console
+      console.log("A user has connected");
+    };
+
+    this.ws.onmessage = (evt) => {
+      // on receiving a message, add it to the list of messages
+
+      const squares = JSON.parse(evt.data);
+      this.addMessage(squares);
+
+      console.log(JSON.parse(evt.data))
+    };
+    
+  
+  }
+
+  addMessage = () =>
+    this.setState((state) => ({ squares: [...state.squares] }));
+
   handleClick = (i) => {
     const squares = this.state.squares.slice();
+    
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -22,7 +51,14 @@ class Board extends React.Component {
       squares: squares,
       xIsNext: !this.state.xIsNext,
     });
-    // post data to backend!
+
+    const data = this.state.squares
+
+
+    this.ws.send(JSON.stringify(data));
+    this.addMessage(data);
+
+    
   };
   renderSquare = (i) => {
     return (
@@ -40,8 +76,8 @@ class Board extends React.Component {
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
-    console.log(this.state.squares);
-    console.log(this.state.xIsNext);
+    // console.log(this.state.squares);
+    // console.log(this.state.xIsNext);
     return (
       <div>
         <div className="status">{status}</div>
