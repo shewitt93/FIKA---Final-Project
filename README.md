@@ -44,7 +44,7 @@ To run the repo code:
    - `pip install -r requirements.txt`
 4. cd into project and start server
    - `python manage.py runserver`
-5. npm run dev to start react app
+5. npm run dev in fikafe to start react app
 
 ### This app uses
 
