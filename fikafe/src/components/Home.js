@@ -5,24 +5,12 @@ import { Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import DashBoard from "./DashBoard";
 import Chat from "./Chat";
+import NotFound404 from "./errorhandlers/NotFound404";
 import TikTac from "./TikTac.js";
+import error500 from "./errorhandlers/error500";
+import Settings from "./Settings";
 
 class App extends React.Component {
-  state = {
-    initialState: [],
-  };
-  componentDidMount() {
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `JWT ${localStorage.getItem("token")}`,
-      },
-    };
-    fetch("http://localhost:8000/core/current_user", options)
-      .then((response) => response.json())
-      .then((data) => this.setState({ initialState: data }));
-  }
   render() {
     return (
       <>
@@ -31,8 +19,10 @@ class App extends React.Component {
           <Route exact path="/home" component={DashBoard} />
           <Route path="/home/chat" component={Chat} />
           <Route path="/home/game" component={TikTac} />
+          <Route path="/home/settings" component={Settings} />
 
-          {/* <Route component={NotFound404} /> */}
+          <Route component={NotFound404} />
+          <Route component={error500} />
         </Switch>
       </>
     );
