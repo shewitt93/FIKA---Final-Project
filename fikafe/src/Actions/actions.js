@@ -3,6 +3,11 @@ const loadData = (data) => ({
   payload: data,
 });
 
+const loadChat = (data) => ({
+  type: "LOAD_CHAT",
+  payload: data,
+});
+
 export const getUser = () => {
   return async (dispatch) => {
     try {
@@ -52,9 +57,9 @@ export const getChat = () => {
           Authorization: `JWT ${localStorage.getItem("token")}`,
         },
       };
-      const resp = await fetch("http://localhost:8000/core/chat", options);
-      const userdata = await resp.json();
-      dispatch(loadData(userdata));
+      const resp = await fetch("http://localhost:8000/core/message/", options);
+      const messagedata = await resp.json();
+      dispatch(loadChat(messagedata));
     } catch (err) {
       throw new Error(err.message);
     }

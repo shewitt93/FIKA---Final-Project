@@ -7,23 +7,23 @@ export default function NavBar() {
   return (
     <div className="navContainer">
       {" "}
-      <div className="logo">FIKA</div>
+      <h1 className="logo">FIKA</h1>
       <nav>
         <NavLink className="navlink" to="/home">
-          Dashboard
+          HOME
         </NavLink>
         <NavLink className="navlink" to="/home/chat">
-          chat
+          CHAT
         </NavLink>
         <NavLink className="navlink" to="/home/game">
-          Game
+          GAME
         </NavLink>
         <NavLink className="navlink" to="/home/settings">
-          settings
+          SETTINGS
         </NavLink>
 
         <NavLink onClick={() => logout()} className="navlink" to="/">
-          Logout
+          LOGOUT
         </NavLink>
       </nav>
     </div>
