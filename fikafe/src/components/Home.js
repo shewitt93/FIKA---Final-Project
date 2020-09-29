@@ -6,7 +6,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import DashBoard from "./DashBoard";
 import Chat from "./Chat";
 import NotFound404 from "./errorhandlers/NotFound404";
-import TikTac from "./TikTac.js";
+import Game from './Game'
 import error500 from "./errorhandlers/error500";
 import Settings from "./Settings";
 import Footer from "./Footer";
@@ -19,7 +19,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/home" component={DashBoard} />
           <Route path="/home/chat" component={Chat} />
-          <Route path="/home/game" component={TikTac} />
+          <Route path="/home/game" component={Game} />
           <Route path="/home/settings" component={Settings} />
 
           <Route component={NotFound404} />
