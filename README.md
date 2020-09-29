@@ -1,8 +1,9 @@
 # Welome to FIKA!
 
-The homely gaming platform where you can get away from work!
+The homely social platform to get people communicating again!
+FIKA allows users to interact via an instant messaging service amongst their colleagues. When users sign up, they will be given a choice to go to the chatroom, or select a game to play depending on their preference and number of players. The game rooms will also include a local chat for players to talk amongst themselves.  Our aim is to bridge the gap that Covid has created by reigniting social interactions, recreating the “coffee break” experience of the office, from home.
 
-Our user will be a worker/recently redundant employee(this could also be used as a social space to network) who wishes to socialise with his work colleagues but no longer gets the opportunity due to Covid. Our space aims to bring people back together and motivate them towards interactions with one another via a chat and games platform
+User Story: Our user will be a worker/recently redundant employee(this could also be used as a social space to network) who wishes to socialise with his work colleagues but no longer gets the opportunity due to Covid. Our space aims to bring people back together and motivate them towards interactions with one another via a chat and games platform
 
 ## MVP
 
