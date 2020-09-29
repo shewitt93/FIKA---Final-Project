@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUser } from "../Actions/actions";
+import { getUser, getChat } from "../Actions/actions";
 
 class DashBoard extends Component {
   componentDidMount() {
     this.props.getUser();
+    this.props.getChat();
   }
 
   render() {
-    console.log(this.props.user.userData);
+    console.log(this.props);
     return (
       <div className="wrapper">
         <h3>Welcome {this.props.user.userData.username}</h3>
@@ -29,4 +30,4 @@ class DashBoard extends Component {
   }
 }
 const mSTP = (state) => ({ user: state });
-export default connect(mSTP, { getUser })(DashBoard);
+export default connect(mSTP, { getUser, getChat })(DashBoard);

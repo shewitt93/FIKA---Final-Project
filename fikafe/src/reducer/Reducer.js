@@ -1,4 +1,4 @@
-const initState = { userData: [], orgData: [], chat: [] };
+const initState = { userData: [], orgData: [], message: [] };
 
 function FikaReducer(state = initState, action) {
   switch (action.type) {
@@ -8,7 +8,7 @@ function FikaReducer(state = initState, action) {
       return { ...state, orgData: action.payload };
 
     case "LOAD_CHAT":
-      return { ...state, chat: action.payload };
+      return { ...state, message: action.payload };
 
     default:
       return state;
