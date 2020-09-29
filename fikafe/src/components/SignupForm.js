@@ -38,17 +38,6 @@ export default class SignupForm extends Component {
             }
           }
         });
-
-      // if (this.state.password === this.state.passwordTwo) {
-      //   alert("Passwords do not match");
-      // }
-      // else if (data.username[0] == "A user with that username already exists.")
-      //  {
-      //   alert("Name Taken!");
-      // }
-      // else {
-      //   window.location = `/`;
-      // }
     } else {
       alert("Passwords do not match");
     }

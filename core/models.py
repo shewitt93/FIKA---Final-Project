@@ -7,7 +7,3 @@ class TicTacToe(models.Model):
 # Create your models here.
 
 
-class Chat(models.Model):
-    # username = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=200, blank=True)
-    time = models.TimeField(auto_now_add=True)
