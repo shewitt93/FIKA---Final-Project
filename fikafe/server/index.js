@@ -15,9 +15,15 @@ wss.on("connection", function connection(ws) {
 wssTTT.on("connection", function connection(ws) {
   console.log("someone connected to tictactoe");
   ws.on("message", function incoming(data) {
-    // console.log(data)
+  
+      console.log(JSON.parse(data))
+  
     wssTTT.clients.forEach(function each(client) {
-        client.send(data);
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        client.send(data)
+      }
+       
+          
       
     });
   });

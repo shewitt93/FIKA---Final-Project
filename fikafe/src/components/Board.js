@@ -13,8 +13,12 @@ class Board extends Component {
 
     ws = new WebSocket(URL);
 
-    addMessage = () =>
-    this.setState((state) => ({ squares: [...state.squares] }));
+    addMessage = (sqs) => {
+        this.setState(({ 
+            squares: sqs,
+            xIsNext: !this.state.xIsNext 
+        }))
+    }
 
     calculateWinner=(squares)=> {
         const lines = [
@@ -37,22 +41,33 @@ class Board extends Component {
     }
 
     handleClick = (i) => {
-        const squares = this.state.squares.slice();
-        
+        const squares = this.state.squares
+        console.log(squares)
+        const data = this.state.squares
+
+        // const moveData = {
+        //     squares: this.state.squares,
+        //     xoro: this.state.xIsNext
+        // }
+
+        console.log(data)
+
         if (this.calculateWinner(squares) || squares[i]) {
           return;
         }
+
         squares[i] = this.state.xIsNext ? "X" : "O";
+        console.log(this.state.squares[i])
         this.setState({
           squares: squares,
           xIsNext: !this.state.xIsNext,
         });
-    
-        const data = this.state.squares
-    
-    
-        this.ws.send(JSON.stringify(data));
-        this.addMessage(data);
+        console.log(this.state.xIsNext)
+        
+        this.addMessage(this.state.squares);
+        this.ws.send(JSON.stringify(data))
+        // this.ws.send(data.xoro)
+
     }
 
     componentDidMount(){
@@ -60,30 +75,29 @@ class Board extends Component {
         // on connecting, log it to the console
             console.log("A user has connected");
         };
-  
-
     }
 
     renderSquare = (i) => {
         return (
+            <>
           <Square
             value={this.state.squares[i]}
-            onClick={() => this.handleClick(i)}
+            onClick={() => this.handleClick(i)} 
           />
+          </>  
         );
-      };
+    };
 
     render() {
 
         this.ws.onmessage = (evt) => {
             // on receiving a message, add it to the list of messages
-      
-                const squares = JSON.parse(evt.data);
-                this.addMessage(squares);
-      
-                console.log(JSON.parse(evt.data))
-            }
+            // console.log(typeof(evt))
+            const squares = JSON.parse(evt.data);
+            this.addMessage(squares);
+        }
 
+        
         const winner = this.calculateWinner(this.state.squares);
         let status;
         if (winner) {
@@ -91,8 +105,7 @@ class Board extends Component {
         } else {
         status = "Next player: " + (this.state.xIsNext ? "X" : "O");
         }
-    // console.log(this.state.squares);
-    // console.log(this.state.xIsNext);
+
         return (
             <div>
                 <div className="status">{status}</div>
