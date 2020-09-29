@@ -3,6 +3,11 @@ const loadData = (data) => ({
   payload: data,
 });
 
+const loadChat = (data) => ({
+  type: "LOAD_CHAT",
+  payload: data,
+});
+
 export const getUser = () => {
   return async (dispatch) => {
     try {
@@ -54,7 +59,7 @@ export const getChat = () => {
       };
       const resp = await fetch("http://localhost:8000/core/message/", options);
       const messagedata = await resp.json();
-      dispatch(loadData(messagedata));
+      dispatch(loadChat(messagedata));
     } catch (err) {
       throw new Error(err.message);
     }

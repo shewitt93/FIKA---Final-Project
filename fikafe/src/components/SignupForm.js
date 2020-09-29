@@ -30,7 +30,9 @@ export default class SignupForm extends Component {
         .then((r) => r.json())
         .then((data) => {
           console.log(data);
-          if (data.username[0] == "A user with that username already exists.") {
+          if (
+            data.username[0] === "A user with that username already exists."
+          ) {
             alert("A user with that username already exists!");
           } else {
             if (window.confirm("click ok to login!")) {
