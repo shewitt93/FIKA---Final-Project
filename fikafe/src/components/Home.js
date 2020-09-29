@@ -1,11 +1,12 @@
-import { isLogin } from "../reducer/authReducer";
+// import { isLogin } from "../reducer/authReducer";
 import React from "react";
 import Nav from "./Nav";
 import { Switch, Route } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
 import DashBoard from "./DashBoard";
 import Chat from "./Chat";
-import TikTac from "./TikTac.js";
+// import TikTac from "./TikTac.js";
+import Game from './Game';
 
 class App extends React.Component {
   state = {
@@ -30,7 +31,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/home" component={DashBoard} />
           <Route path="/home/chat" component={Chat} />
-          <Route path="/home/game" component={TikTac} />
+          <Route path="/home/game" component={Game} />
+
 
           {/* <Route component={NotFound404} /> */}
         </Switch>
