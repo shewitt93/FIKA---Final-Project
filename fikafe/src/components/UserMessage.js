@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 export default ({ name, message, time }) => (
-  <p className='usermessage'>
+  <p className="usermessage">
     <strong>{name}</strong> : {message}
     <br></br>
     {time}

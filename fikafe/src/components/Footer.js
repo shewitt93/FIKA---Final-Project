@@ -1,22 +1,15 @@
-import React, { Component } from "react";
-import Chat from './Chat';
+import React, { Component, useEffect } from "react";
 import { getUser, getChat } from "../Actions/actions";
 import { connect } from "react-redux";
-// import { NavLink } from "react-router-dom";
-// import "../styles/NavBar.css";
-// import { logout } from "../reducer/authReducer";
+// import Chat from "./Chat";
 
- class Footer extends Component {
-  componentDidMount() {
-     this.props.getChat()
-   }
+class Footer extends Component {
   render() {
     return (
-      
       <div className="navContainer">
         {" "}
-        <h1 className="logo">hello there</h1>
-        <Chat />
+        <h3 className="logo">bits and bobs</h3>
+        {/* <div Component={Chat} /> */}
       </div>
     );
   }

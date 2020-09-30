@@ -1,16 +1,18 @@
 .chatbox {
-    display: flex;
-    align-self: center;
-    width: 30vw;
-    flex-direction: column;
-  }
-  .usermessage {
-    display: flex;
-    align-self: flex-end;
-    flex-direction: column;
-  }
-  .otherusers {
-    display: flex;
-    align-self: flex-start;
-    flex-direction: column;
-  }
+  display: flex;
+  align-self: center;
+  width: 30vw;
+  flex-direction: column;
+}
+
+.usermessage {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+}
+
+.otherusers {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
