@@ -74,7 +74,6 @@ CORS_ORIGIN_WHITELIST = (
       'http://localhost:8000',
 )
 import datetime
-
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'fika.utils.my_jwt_response_handler',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=10)
