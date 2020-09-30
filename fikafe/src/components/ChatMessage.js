@@ -1,8 +1,11 @@
 import React from "react";
 export default ({ name, message, time }) => (
   <p className="otherusers">
-    <strong>{name}</strong> : {message}
+    <p>
+      <strong>{name}</strong>
+    </p>{" "}
+    {message}
     <br></br>
-    {time}
+    <p className="time">{time}</p>
   </p>
 );

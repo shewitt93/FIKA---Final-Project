@@ -1,0 +1,24 @@
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.navContainer nav {
+  padding-bottom: 53.9px;
+}
+
+.navlink {
+  margin-right: 60px;
+  font-size: 16px;
+}
+
+.navlink:last-of-type {
+  margin-right: 0;
+}
+
+.footer {
+  bottom: 0;
+  position: absolute;
+}

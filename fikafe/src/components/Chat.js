@@ -9,14 +9,13 @@ const URL = "ws://localhost:3030";
 
 class Chat extends React.Component {
   state = {
-    // username: this.props.user.userData.username,
-    message: this.props.user.message,
+    message: [],
   };
   ws = new WebSocket(URL);
   componentDidMount() {
     this.props.getUser();
-    this.props.getChat();
-
+    // this.props.getChat();
+    this.setState({ message: this.props.user.message });
     this.ws.onopen = () => {
       // on connecting, log it to the console
       console.log("A user has connected");
@@ -34,17 +33,19 @@ class Chat extends React.Component {
       });
     };
   }
-
   componentDidUpdate(prevProps, PrevState) {
     if (PrevState.message !== this.state.message) {
       // this.setState({ message: this.props.getChat() });
       this.props.getChat();
+      this.setChat();
     }
   }
+  setChat = () => {
+    this.setState({ message: this.props.user.message });
+  };
+  addMessage = (data) =>
+    this.setState((state) => ({ message: [...state.message, data] }));
 
-  addMessage = (message) =>
-    this.setState((state) => ({ message: [message, ...state.message] }));
-  // this.props.getChat();
   submitMessage = (messageString) => {
     // on submitting the ChatInput form, send the message, add it to the list and reset the input
     const message = {
@@ -67,16 +68,16 @@ class Chat extends React.Component {
     this.setChat();
   };
   render() {
-    console.log(this.props.user.message);
+    console.log(this.state.message);
     const name = this.props.user.userData.username;
-
-    let message = this.state.message.map((message, index) =>
+    let message = this.props.user.message.map((message, index) =>
       name !== message.username ? (
         <ChatMessage
           className="otherusers"
           key={index}
           message={message.message}
           name={message.username}
+          time={message.created_at}
         />
       ) : (
         <UserMessage
@@ -89,7 +90,7 @@ class Chat extends React.Component {
       )
     );
     return (
-      <div className="wrapper">
+      <div className="chatWrapper wrapper">
         <div className="chatbox">{message}</div>
         {/* //   {this.props.user.message.username.filter()}
       //   if this.props.user.message.username

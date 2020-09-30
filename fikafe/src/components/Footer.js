@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 class Footer extends Component {
   render() {
     return (
-      <div className="navContainer">
+      <div className="footer">
         {" "}
         <h3 className="logo">bits and bobs</h3>
         {/* <div Component={Chat} /> */}
