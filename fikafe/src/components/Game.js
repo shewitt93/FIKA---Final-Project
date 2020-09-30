@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Board from './Board'
+import GameChat from './GameChat'
+import { connect } from "react-redux";
+import { getUser } from "../Actions/actions";
 
 class Game extends Component {
     render() {
@@ -7,11 +10,11 @@ class Game extends Component {
             <div>
                 <div className="game-board">
                     <Board />
+                    <GameChat />
                 </div>
             </div>
         )
     }
 }
-
-export default Game
-
+const mSTP = (state) => ({ user: state });
+export default connect(mSTP, { getUser }) (Game)

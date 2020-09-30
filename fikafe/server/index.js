@@ -1,6 +1,7 @@
 const WebSocket = require("ws");
 const wss = new WebSocket.Server({ port: 3030 });
 const wssTTT = new WebSocket.Server({ port: 3040 });
+const wssGameChat = new WebSocket.Server({ port: 3041 });
 
 wss.on("connection", function connection(ws) {
   ws.on("message", function incoming(data) {
@@ -21,6 +22,7 @@ wssTTT.on("connection", function connection(ws) {
     wssTTT.clients.forEach(function each(client) {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
         client.send(data)
+        console.log('sent')
       }
        
           
@@ -28,5 +30,13 @@ wssTTT.on("connection", function connection(ws) {
     });
   });
 });
-
+wssGameChat.on("connection", function connection(ws) {
+  ws.on('message', function incoming(data) {
+    wssGameChat.clients.forEach(function each(client) {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        client.send(data)
+      }
+    })
+  })
+})
 

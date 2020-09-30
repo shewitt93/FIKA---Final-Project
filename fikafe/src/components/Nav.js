@@ -18,9 +18,9 @@ export default function NavBar() {
         <NavLink className="navlink" to="/home/game">
           GAME
         </NavLink>
-        <NavLink className="navlink" to="/home/settings">
+        {/* <NavLink className="navlink" to="/home/settings">
           SETTINGS
-        </NavLink>
+        </NavLink> */}
 
         <NavLink onClick={() => logout()} className="navlink" to="/">
           LOGOUT
