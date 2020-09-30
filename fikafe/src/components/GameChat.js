@@ -2,20 +2,18 @@ import React, { Component } from "react";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
 import UserMessage from "./UserMessage"
-import { getUser, getChat } from "../Actions/actions";
+import { getUser } from "../Actions/actions";
 import { connect } from "react-redux";
 import "../styles/Userchat.css";
-const URL = "ws://localhost:3030";
+const URL = "ws://localhost:3041";
 
-class Chat extends React.Component {
+class GameChat extends Component {
   state = {
     message: [],
   };
   ws = new WebSocket(URL);
   componentDidMount() {
     this.props.getUser();
-    // this.props.getChat();
-    this.setState({ message: this.props.user.message})
     this.ws.onopen = () => {
       // on connecting, log it to the console
       console.log("A user has connected");
@@ -33,17 +31,13 @@ class Chat extends React.Component {
       });
     };
   }
-  componentDidUpdate(prevProps, PrevState) {
-    
-    if (PrevState.message !== this.state.message) {
-      // this.setState({ message: this.props.getChat() });
-      this.props.getChat()
-      this.setChat();
-    }
-  }
-  setChat = () => {
-    this.setState({ message: this.props.user.message })
-  }
+  // componentDidUpdate(prevProps, PrevState) {
+  //   if (PrevState.message !== this.state.message) {
+  //     // this.setState({ message: this.props.getChat() });
+  //     this.props.getChat();
+  //   }
+  // }
+
   addMessage = (data) =>
     this.setState((state) => ({ message: [...state.message, data] 
   }));
@@ -54,25 +48,24 @@ class Chat extends React.Component {
       username: this.props.user.userData.username,
       message: messageString,
     };
-    console.log(message);
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `JWT ${localStorage.getItem("token")}`,
-      },
-      body: JSON.stringify(message),
-    };
-    console.log(options);
-    fetch("http://localhost:8000/core/message/", options).then((r) => r.json());
+    // console.log(message);
+    // const options = {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //     Authorization: `JWT ${localStorage.getItem("token")}`,
+    //   },
+    //   body: JSON.stringify(message),
+    // };
+    // console.log(options);
+    // fetch("http://localhost:8000/core/message/", options).then((r) => r.json());
     this.ws.send(JSON.stringify(message));
     this.addMessage(message);
-    this.setChat()
   };
   render() {
-    console.log(this.state.message);
+    // console.log(this.props.user.message);
      const name = this.props.user.userData.username;
-    let message = this.props.user.message.map((message, index) =>
+    let message = this.state.message.map((message, index) =>
       name !== message.username ? (
         <ChatMessage
           className="otherusers"
@@ -112,5 +105,5 @@ class Chat extends React.Component {
   }
 }
 const mSTP = (state) => ({ user: state });
-export default connect(mSTP, { getUser, getChat })(Chat);
+export default connect(mSTP, { getUser })(GameChat);
 // export default Chat;

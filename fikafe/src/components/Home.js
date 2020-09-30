@@ -12,6 +12,7 @@ import Settings from "./Settings";
 import Footer from "./Footer";
 
 class App extends React.Component {
+  
   render() {
     return (
       <>
@@ -20,7 +21,7 @@ class App extends React.Component {
           <Route exact path="/home" component={DashBoard} />
           <Route path="/home/chat" component={Chat} />
           <Route path="/home/game" component={Game} />
-          <Route path="/home/settings" component={Settings} />
+          {/* <Route path="/home/settings" component={Settings} /> */}
 
           <Route component={NotFound404} />
           <Route component={error500} />
@@ -30,4 +31,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;

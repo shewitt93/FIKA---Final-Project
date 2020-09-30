@@ -3,6 +3,10 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+body {
+  font: 14px "Monserrat", Futura, sans-serif;
+  margin: 20px;
+}
 *,
 *:before,
 *:after {
