@@ -17,4 +17,5 @@ class Game extends Component {
   }
 }
 const mSTP = (state) => ({ user: state });
+
 export default connect(mSTP, { getUser })(Game);

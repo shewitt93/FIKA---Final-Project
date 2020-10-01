@@ -22,7 +22,6 @@ wssTTT.on("connection", function connection(ws) {
     wssTTT.clients.forEach(function each(client) {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
         client.send(data)
-        console.log('sent')
       }
        
           
