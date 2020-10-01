@@ -1,0 +1,22 @@
+.options {
+  width: 600px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.optionsGames {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.options div h4 {
+  letter-spacing: 3px;
+}
+
+.lastLogin {
+  position: absolute;
+  bottom: 130px;
+}

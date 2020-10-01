@@ -1,9 +1,6 @@
-.wrapper {
+.loginwrapper {
   height: 100vh;
   width: 100vw;
-  color: #3a3a3a;
-  background-color: #fffcfa;
-  font-family: "Montserrat", sans-serif;
   font-kerning: auto;
   display: flex;
   flex-direction: column;

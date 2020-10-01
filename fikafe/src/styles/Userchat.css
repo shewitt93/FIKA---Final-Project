@@ -11,16 +11,11 @@
   padding: 30px;
 }
 
-.usermessage {
-  display: flex;
-  align-self: flex-end;
-  flex-direction: column;
-}
-
 .otherusers {
   display: flex;
   align-self: flex-start;
   flex-direction: column;
+  background-color: var(--pink);
 }
 
 .chatWrapper {
@@ -31,14 +26,22 @@
 .usermessage,
 .otherusers {
   width: 400px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .usermessage {
   text-align: right;
+  background-color: var(--green);
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
 }
 
 .time {
   font-size: 12px;
+  opacity: 0.6;
 }
 
 .chatInput {
@@ -49,13 +52,20 @@
   min-height: 30px;
   margin-bottom: 20px;
   width: 100%;
+  padding: 0 5px;
 }
 
 .chatSubmit {
   background-color: var(--yellow);
-  border: 1px solid rgba(58, 58, 58, 0.4);
+  border: none;
+  border-radius: 16px;
   font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   height: 30px;
   width: 160px;
   cursor: pointer;
+}
+
+.yellowcircleChat {
+  transform: translate(-300px, -300px);
 }

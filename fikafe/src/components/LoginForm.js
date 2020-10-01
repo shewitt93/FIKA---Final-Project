@@ -44,7 +44,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="loginwrapper">
         <div className="yellowcircle"></div>
         <div className="greencircle"></div>
         <h1 className="loginTitle">FIKA</h1>

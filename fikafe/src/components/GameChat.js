@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
-import UserMessage from "./UserMessage"
+import UserMessage from "./UserMessage";
 import { getUser } from "../Actions/actions";
 import { connect } from "react-redux";
 import "../styles/Userchat.css";
+import "../styles/modal.css";
 const URL = "ws://localhost:3041";
 
 class GameChat extends Component {
@@ -39,8 +40,7 @@ class GameChat extends Component {
   // }
 
   addMessage = (data) =>
-    this.setState((state) => ({ message: [...state.message, data] 
-  }));
+    this.setState((state) => ({ message: [...state.message, data] }));
 
   submitMessage = (messageString) => {
     // on submitting the ChatInput form, send the message, add it to the list and reset the input
@@ -64,7 +64,7 @@ class GameChat extends Component {
   };
   render() {
     // console.log(this.props.user.message);
-     const name = this.props.user.userData.username;
+    const name = this.props.user.userData.username;
     let message = this.state.message.map((message, index) =>
       name !== message.username ? (
         <ChatMessage
@@ -85,17 +85,9 @@ class GameChat extends Component {
       )
     );
     return (
-      <div className="wrapper">
+      <div className="wrappergame">
         <div className="chatbox">{message}</div>
-        {/* //   {this.props.user.message.username.filter()}
-      //   if this.props.user.message.username
-      //   {this.state.message.map((message, index) => ( */}
-        {/* //     <ChatMessage */}
-        {/* //       key={index}
-      //       message={message.message}
-      //       name={message.username}
-      //     />
-      //   ))} */}
+
         <ChatInput
           ws={this.ws}
           onSubmitMessage={(messageString) => this.submitMessage(messageString)}

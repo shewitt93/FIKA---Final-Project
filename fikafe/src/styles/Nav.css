@@ -22,3 +22,10 @@
   bottom: 0;
   position: absolute;
 }
+nav a {
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  letter-spacing: 6px;
+}

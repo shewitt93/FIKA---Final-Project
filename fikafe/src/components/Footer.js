@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       <div className="footer">
         {" "}
-        <h3 className="logo">bits and bobs</h3>
+        <h4 className="logo">Bhuma, George and Simon</h4>
         {/* <div Component={Chat} /> */}
       </div>
     );

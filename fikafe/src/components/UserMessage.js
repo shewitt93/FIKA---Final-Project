@@ -1,11 +1,10 @@
 import React from "react";
 export default ({ name, message, time }) => (
-  <p className="usermessage">
+  <div className="usermessage">
     <p>
       <strong>{name}</strong>
     </p>{" "}
-    {message}
-    <br></br>
+    <p>{message}</p>
     <p className="time">{time}</p>
-  </p>
+  </div>
 );

@@ -10,7 +10,6 @@ class Game extends Component {
       <div>
         <div className="game-board">
           <Board />
-          {/* <GameChat /> */}
         </div>
       </div>
     );

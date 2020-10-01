@@ -64,6 +64,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+  
+    'DATETIME_FORMAT': "%d/%m/%Y %H:%M",
+
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -78,6 +81,7 @@ JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'fika.utils.my_jwt_response_handler',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=10)
 }
+
 
 TEMPLATES = [
     {
@@ -134,6 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
+DATETIME_FORMAT= 'm/d/Y H:i'
 
 LANGUAGE_CODE = 'en-us'
 
@@ -141,7 +146,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+# USE_L10N = False
 
 USE_TZ = True
 

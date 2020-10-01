@@ -3,9 +3,11 @@ import Square from "./Square";
 import "../styles/tiktactoe.css";
 import { connect } from "react-redux";
 import { getUser } from "../Actions/actions";
-import "../styles/circle.svg";
+import circle from "../styles/circle.svg";
+import cross from "../styles/cross.svg";
+import winnerImg from "../styles/winner.svg";
 
-const URL = "ws://localhost:3040";
+const URL = "ws://young-chamber-42572.herokuapp.com/";
 
 class Board extends Component {
   state = {
@@ -167,28 +169,33 @@ class Board extends Component {
       status = "Winner: " + winner;
 
       return (
-        <>
-          <p>
-            The winner was{" "}
-            {winner == "X" ? this.state.player1 : this.state.player2} who was{" "}
-            {winner}
-          </p>
-          <br></br>
-          <a onClick={this.handleNewGame}> Click for new game</a>
-          <br></br>
-          <a href="home/">Return to home</a>
-        </>
+        <div className="gameResult">
+          <>
+            <h3>
+              The winner was{" "}
+              {winner == "X" ? this.state.player1 : this.state.player2} who was{" "}
+              {winner}
+              <img src={winnerImg}></img>
+            </h3>
+
+            <a onClick={this.handleNewGame}> Click for new game</a>
+
+            <a href="home/">Return to home</a>
+          </>
+        </div>
       );
     } else if (this.state.squares.includes(null) == false) {
       status = "The game is a draw!";
       return (
-        <>
-          <p>Tough game! It's a draw!</p>
-          <br></br>
-          <a onClick={this.handleNewGame}> Click for new game</a>
-          <br></br>
-          <a href="home/">Return to home</a>
-        </>
+        <div className="gameResult">
+          <>
+            <p>Tough game! It's a draw!</p>
+
+            <a onClick={this.handleNewGame}> Click for new game</a>
+
+            <a href="home/">Return to home</a>
+          </>
+        </div>
       );
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
@@ -196,32 +203,26 @@ class Board extends Component {
 
     return (
       <div>
-        <div>
-          <a onClick={this.assignX} id="xOrO">
-            Play as X:
-          </a>
-          {this.state.player1 == null ? (
-            <label>Awaiting X</label>
-          ) : (
-            <label>{this.state.player1} is X</label>
-          )}
-          <br></br>
-          <a onClick={this.assignO} id="xOrO">
-            Play as O:
-          </a>
-          {this.state.player2 == null ? (
-            <label>Awaiting O</label>
-          ) : (
-            <label>{this.state.player2} is O</label>
-          )}
-        </div>
-        <div className="status">{status}</div>
         <div className="gameArea">
-          <div className="playAs playAsNought">
-            <h3>Play As</h3>
-            <img src="../styles/circle.svg"></img>
-          </div>
+          <a onClick={this.assignO} id="x0r0">
+            <div className="playAs playAsNought">
+              <h3>Play as</h3>
+              <img src={circle} alt="Circle" />
+              <div>
+                {this.state.player2 == null ? (
+                  <label>
+                    <h4>Awaiting O</h4>
+                  </label>
+                ) : (
+                  <label>
+                    <h4>{this.state.player2} is O</h4>
+                  </label>
+                )}
+              </div>
+            </div>
+          </a>
           <div className="boardRows">
+            <h4 className="status">{status}</h4>
             <div className="board-row">
               {this.renderSquare(0)}
               {this.renderSquare(1)}
@@ -238,9 +239,23 @@ class Board extends Component {
               {this.renderSquare(8)}
             </div>
           </div>
-          <div className="playAs playAsCross">
-            <h3>Play As</h3>
-          </div>
+          <a onClick={this.assignX} id="x0r0">
+            <div className="playAs playAsCross">
+              <h3>Play as</h3>
+              <img src={cross} alt="Cross" />
+              <div>
+                {this.state.player1 == null ? (
+                  <label>
+                    <h4>Awaiting X</h4>
+                  </label>
+                ) : (
+                  <label>
+                    <h4>{this.state.player1} is X</h4>
+                  </label>
+                )}
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     );

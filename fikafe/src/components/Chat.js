@@ -33,6 +33,7 @@ class Chat extends React.Component {
       });
     };
   }
+
   componentDidUpdate(prevProps, PrevState) {
     if (PrevState.message !== this.state.message) {
       // this.setState({ message: this.props.getChat() });
@@ -90,21 +91,27 @@ class Chat extends React.Component {
       )
     );
     return (
-      <div className="chatWrapper wrapper">
-        <div className="chatbox">{message}</div>
-        {/* //   {this.props.user.message.username.filter()}
+      <div>
+        <div className="yellowcircleChat yellowcircle"></div>
+        <div className="greencircle"></div>
+        <div className="chatWrapper wrapper">
+          <div className="chatbox">{message}</div>
+          {/* //   {this.props.user.message.username.filter()}
       //   if this.props.user.message.username
       //   {this.state.message.map((message, index) => ( */}
-        {/* //     <ChatMessage */}
-        {/* //       key={index}
+          {/* //     <ChatMessage */}
+          {/* //       key={index}
       //       message={message.message}
       //       name={message.username}
       //     />
       //   ))} */}
-        <ChatInput
-          ws={this.ws}
-          onSubmitMessage={(messageString) => this.submitMessage(messageString)}
-        />
+          <ChatInput
+            ws={this.ws}
+            onSubmitMessage={(messageString) =>
+              this.submitMessage(messageString)
+            }
+          />
+        </div>
       </div>
     );
   }

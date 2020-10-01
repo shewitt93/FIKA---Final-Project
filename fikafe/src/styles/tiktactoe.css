@@ -38,13 +38,18 @@ ul {
   margin-left: 20px;
 }
 
-.gameArea {
-  padding: 0 100px 0 100px;
-  width: 100%;
+.gameArea,
+.gameResult,
+.gameResult img {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.gameArea {
+  padding: 0 100px 0 100px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -53,4 +58,35 @@ ul {
 
 .boardRows {
   width: 600px;
+}
+
+.playAs,
+.status,
+.gameResult {
+  text-align: center;
+}
+
+.playAs img {
+  width: 200px;
+}
+
+.status {
+  margin-bottom: 30px;
+}
+
+.gameResult a {
+  font-size: 25px;
+  display: block;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gameResult img {
+  height: 600px;
+  z-index: -2;
+}
+
+.gameResult a:hover {
+  letter-spacing: 3px;
 }

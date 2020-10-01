@@ -48,7 +48,7 @@ export default class SignupForm extends Component {
   render() {
     return (
       <>
-        <div className="wrapper">
+        <div className="loginwrapper">
           <div className="greencircleRegistration"></div>
           <div className="pinkcircle"></div>
           <h1 className="loginTitle">FIKA</h1>

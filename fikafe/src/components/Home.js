@@ -10,9 +10,8 @@ import Game from "./Game";
 import error500 from "./errorhandlers/error500";
 import Settings from "./Settings";
 import Footer from "./Footer";
-
+import Modal from "../styles/modal.css";
 class App extends React.Component {
-  
   render() {
     return (
       <>
