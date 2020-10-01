@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 const loadData = (data) => ({
   type: "LOAD_DATA",
   payload: data,
 });
 
 const loadChat = (data) => ({
+=======
+export const loadData = (data) => ({
+  
+  type: "LOAD_DATA",
+  payload: data,
+
+});
+
+export const loadChat = (data) => ({
+>>>>>>> bhuma08-master
   type: "LOAD_CHAT",
   payload: data,
 });

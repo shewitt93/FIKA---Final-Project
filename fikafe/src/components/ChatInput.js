@@ -18,6 +18,7 @@ class ChatInput extends Component {
         }}
       >
         <input
+          className ='formInput'
           type="text"
           placeholder={"Enter message..."}
           value={this.state.message}
