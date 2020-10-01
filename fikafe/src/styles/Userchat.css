@@ -1,16 +1,61 @@
+.chatbox,
+.chatForm {
+  width: 900px;
+}
 .chatbox {
-    display: flex;
-    align-self: center;
-    width: 30vw;
-    flex-direction: column;
-  }
-  .usermessage {
-    display: flex;
-    align-self: flex-end;
-    flex-direction: column;
-  }
-  .otherusers {
-    display: flex;
-    align-self: flex-start;
-    flex-direction: column;
-  }
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+  padding: 30px;
+}
+
+.usermessage {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+}
+
+.otherusers {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+
+.chatWrapper {
+  height: calc(100vh - 292.74px) !important;
+  padding-top: 30px;
+}
+
+.usermessage,
+.otherusers {
+  width: 400px;
+}
+
+.usermessage {
+  text-align: right;
+}
+
+.time {
+  font-size: 12px;
+}
+
+.chatInput {
+  box-shadow: none;
+  border: 1px solid rgba(58, 58, 58, 0.4);
+  outline: none;
+  background-color: transparent;
+  min-height: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.chatSubmit {
+  background-color: var(--yellow);
+  border: 1px solid rgba(58, 58, 58, 0.4);
+  font-family: "Montserrat", sans-serif;
+  height: 30px;
+  width: 160px;
+  cursor: pointer;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
-import UserMessage from "./UserMessage"
+import UserMessage from "./UserMessage";
 import { getUser, getChat } from "../Actions/actions";
 import { connect } from "react-redux";
 import "../styles/Userchat.css";
@@ -15,7 +15,7 @@ class Chat extends React.Component {
   componentDidMount() {
     this.props.getUser();
     // this.props.getChat();
-    this.setState({ message: this.props.user.message})
+    this.setState({ message: this.props.user.message });
     this.ws.onopen = () => {
       // on connecting, log it to the console
       console.log("A user has connected");
@@ -34,19 +34,17 @@ class Chat extends React.Component {
     };
   }
   componentDidUpdate(prevProps, PrevState) {
-    
     if (PrevState.message !== this.state.message) {
       // this.setState({ message: this.props.getChat() });
-      this.props.getChat()
+      this.props.getChat();
       this.setChat();
     }
   }
   setChat = () => {
-    this.setState({ message: this.props.user.message })
-  }
+    this.setState({ message: this.props.user.message });
+  };
   addMessage = (data) =>
-    this.setState((state) => ({ message: [...state.message, data] 
-  }));
+    this.setState((state) => ({ message: [...state.message, data] }));
 
   submitMessage = (messageString) => {
     // on submitting the ChatInput form, send the message, add it to the list and reset the input
@@ -67,11 +65,11 @@ class Chat extends React.Component {
     fetch("http://localhost:8000/core/message/", options).then((r) => r.json());
     this.ws.send(JSON.stringify(message));
     this.addMessage(message);
-    this.setChat()
+    this.setChat();
   };
   render() {
     console.log(this.state.message);
-     const name = this.props.user.userData.username;
+    const name = this.props.user.userData.username;
     let message = this.props.user.message.map((message, index) =>
       name !== message.username ? (
         <ChatMessage
@@ -92,7 +90,7 @@ class Chat extends React.Component {
       )
     );
     return (
-      <div className="wrapper">
+      <div className="chatWrapper wrapper">
         <div className="chatbox">{message}</div>
         {/* //   {this.props.user.message.username.filter()}
       //   if this.props.user.message.username

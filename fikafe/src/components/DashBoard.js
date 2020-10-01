@@ -13,8 +13,8 @@ class DashBoard extends Component {
     return (
       <div className="wrapper">
         <h3>Welcome {this.props.user.userData.username}</h3>
-        <h6>last login: {this.props.user.userData.last_login}</h6>
-        <h5>What would you like to do today?</h5>
+        <p>last login: {this.props.user.userData.last_login}</p>
+        <h4>What would you like to do today?</h4>
         <br></br>
         <div className="game1">
           <a href="/home/game">TIKTAKTOE</a>

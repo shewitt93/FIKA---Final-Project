@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+:root {
+  --pink: #f8c3b2;
+  --green: #9fe5d5;
+  --black: #3a3a3a;
+  --yellow: #ffdca7;
+  --white: #fffcfa;
+}
+
 html {
   box-sizing: border-box;
   overflow-x: hidden;
 }
 body {
   font: 14px "Monserrat", Futura, sans-serif;
-  margin: 20px;
+  padding: 20px;
+  background-color: var(--white);
 }
 *,
 *:before,
@@ -39,4 +49,8 @@ h2,
 h3,
 h4 {
   font-weight: 400;
+}
+
+.homeLogo {
+  margin-top: 0 !important;
 }
