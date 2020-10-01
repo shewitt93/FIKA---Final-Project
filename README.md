@@ -43,21 +43,24 @@ To run the repo code:
 2. cd into repo
 3. Install requirements
    - `pip install -r requirements.txt`
-4. cd into project and start server
+4. pipenv shell and start server
+   - `pipenv shell`
    - `python manage.py runserver`
-5. npm run dev in fikafe to start react app
- -`but first npm install`
+5. start react app
+  - `CD into fikafe`
+  -` first npm install`
+  - `npm start`
 6. create psql table called fika
 -`createruser --superuser postgres`
 - `python manage.py makemigrations`
 - `python manage.py migrate`
-7. for websocket chat cd into fikafe/server
+7. for websocket chat and game cd into fikafe/server
 - `run node index.js`
 
 ### This app uses
 
 1. React, Redux
-2. Django REST
+2. Django REST framework
 3. PostgreSQL
 4. Socket.io
 
