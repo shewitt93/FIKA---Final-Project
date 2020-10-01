@@ -20,10 +20,6 @@ https://github.com/georgeo23/reactchat
 
 
 
-- To create a full stack app, with user authentication.
-- Socketed Tic Tac Toe game limited to players in game.
-- 60% test coverage
-- Admin portal for organisations
 
 ## Design specs
 
@@ -34,6 +30,11 @@ https://github.com/georgeo23/reactchat
 ![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Schema.png)
 
 ## User running instructions
+1. go to 'wesbite'
+2. register
+3. login
+4. explore!
+
 
 ## Dev running instruction
 
@@ -66,21 +67,21 @@ To run the repo code:
 
 ## Process and Roadmap
 
-- 1
-- 2
-- 3
+- 1 Created Figma and schemas. Created Django backend with authencation and created user models 
+- 2 Created react fromend and connected it to backend with form validation for authentication login
+- 3 added chat and games with websockets
 
 ## Challenges
 
-- 1
+- 1 Learning and integrating Websocket
 - 2
 - 3
 
 ## Future features
 
-- 1
-- 2
-- 3
+- 1 More Games
+- 2 More user features
+- 3 More fun!
 
 ## License
 
