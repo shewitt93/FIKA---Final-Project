@@ -7,10 +7,10 @@ FIKA allows users to interact via an instant messaging service amongst their col
 
 ## MVP
 
-* To create a full stack app, with user authentication.
-* Socketed Tic Tac Toe game limited to players in game.
-* 60% test coverage
-* Admin portal for organisations
+* To create a full stack app, with user authentication. ✔️
+* Socketed Tic Tac Toe game limited to players in game. ✔️
+* 60% test coverage ✔️
+* Admin portal for organisations ✔️
 
 ## Snippets
 ## Websocket
