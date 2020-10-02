@@ -13,8 +13,10 @@ FIKA allows users to interact via an instant messaging service amongst their col
 * Admin portal for organisations
 
 ## Snippets
-
-https://github.com/georgeo23/reactchat
+Websocket
+- https://github.com/georgeo23/reactchat
+Frontend
+- https://github.com/georgeo23/fika_frontend
 
 
 
