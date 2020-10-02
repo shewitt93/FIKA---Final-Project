@@ -13,9 +13,9 @@ FIKA allows users to interact via an instant messaging service amongst their col
 * Admin portal for organisations
 
 ## Snippets
-# Websocket
+## Websocket
 - https://github.com/georgeo23/reactchat
-# Frontend
+## Frontend
 - https://github.com/georgeo23/fika_frontend
 
 
@@ -31,7 +31,7 @@ FIKA allows users to interact via an instant messaging service amongst their col
 ![Image of Figma](https://github.com/shewitt93/FIKA---Final-Project/blob/master/Schema.png)
 
 ## User running instructions
-1. go to 'wesbite'
+1. go to 'https://app-fika.herokuapp.com/'
 2. register
 3. login
 4. explore!
