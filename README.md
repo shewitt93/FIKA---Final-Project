@@ -51,9 +51,9 @@ To run the repo code:
    - `pipenv shell`
    - `python manage.py runserver`
 5. start react app
-  - `CD into fikafe`
-  -` first npm install`
-  - `npm start`
+  -`CD into fikafe`
+  -`npm install`
+  -`npm start`
 6. create psql table called fika
 -`createruser --superuser postgres`
 - `python manage.py makemigrations`
@@ -70,21 +70,21 @@ To run the repo code:
 
 ## Process and Roadmap
 
-- 1 Created Figma and schemas. Created Django backend with authencation and created user models 
-- 2 Created react fromend and connected it to backend with form validation for authentication login
-- 3 added chat and games with websockets
+-  Created Figma and schemas. Created Django backend with authencation and created user models 
+-  Created react fromend and connected it to backend with form validation for authentication login
+-  added chat and games with websockets
 
 ## Challenges
 
-- 1 Learning and integrating Websocket
-- 2
-- 3
+- Learning and integrating Websocket
+- Deploying multiple servers
+
 
 ## Future features
 
-- 1 More Games
-- 2 More user features
-- 3 More fun!
+-  More Games
+-  More user features
+-  More fun!
 
 ## License
 
@@ -92,13 +92,13 @@ To run the repo code:
 
 ### to add
 
-➽ Why did you build this? -
-➽ How do you use this? -
-➽ What is this? -
+
+
+
 ➽ Documentation along with examples of what you’ve built or code snippets
-➽ What are the technologies used? -
-➽ What are the prerequisites? -
-➽ Getting started guide (Installation) -
-➽ Roadmap (only utilized if your project will be used long term)
+
+
+
+
 ➽ Demo & Current Build Status
-➽ Credits & License -
+
