@@ -44,6 +44,12 @@ FIKA allows users to interact via an instant messaging service amongst their col
 User Story: Our user will be a worker/recently redundant employee(this could also be used as a social space to network) who wishes to socialise with their work colleagues but no longer gets the opportunity due to Covid. Our space lets them once again interact with their colleagues, firstly they can register to the website then login through our secure page. He will then be taken to the home page where they will be greeted with a welcome and their last login date. He can then choose which game to play or to go to the chat room to talk with their friends. Currently they will be able to play tiktactoe, with the ability to choose their marker against another player in real time! Afterwards they can choose to keep playing, go to home or logout securely!
 
 ## Dev running instruction
+* Prerequisites
+ 1. Node.js
+ 2. PostgreSQL 12+
+ 3. Python 3.8+
+ 4. Pip (to install pipenv)
+ 5. Pipenv
 
 To run the repo code:
 
